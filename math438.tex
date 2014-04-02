@@ -1,0 +1,130 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{enumitem}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newcommand\abs[1]{\left|#1\right|}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\begin{document}
+
+\begin{flushright}
+\textbf{Brandon Toner \\
+\today}
+\end{flushright}
+
+\begin{center}
+\textbf{MATH 438: Introduction to Complex Variables \\
+Proofs} \\
+\end{center}
+
+\begin{enumerate}
+  \item Chapter 1
+  \begin{enumerate}[label*=\arabic*.]
+    \item 
+    \begin{enumerate}[label=\alph*]
+      \item \begin{eqnarray*}
+            (a+b i)(a-b i) &=& a^2 - a b i + a b i - b^2 i^2  \\
+                           &=& a^2 - b^2 i^2 \\
+                           &=& a^2 + b^2
+            \end{eqnarray*}
+      \item \begin{eqnarray*}
+            (a+b i)^2 &=& (a+b i)(a+bi) \\
+                      &=& a^2 + abi + abi + b^2 i^2 \\
+                      &=& a^2  + 2abi - b^2
+            \end{eqnarray*}
+    \end{enumerate}
+    \item
+	\begin{enumerate}[label=\alph*]
+        \item \begin{eqnarray*}
+            zw&=&wz \\
+            (x+iy)(u+iv)&=&(u+iv)(x+iy) \\
+            xu+ixv+iyu+i^2yv&=&ux+iuy+ivx+i^2vy \\
+            ux-vy+(vx+uy)i&=&ux-vy+(vx+uy)i
+        \end{eqnarray*}
+        \item \begin{eqnarray*}
+            z(r+w)&=&zr+zw \\
+            (x+iy)(p+iq+u+iv)&=&(x+iy)(p+iq)+(x+iy)(u+iv) \\
+            px+iqx+ux+ivx+ipy+i^2yq+iuy+i^2yv&=&px+iqx+ipy+i^2yq+ux+ivx+iuy+i^2vy \\
+            px-yq-vy+(qx+vx+py+uy)i&=&px-yq-vy+(qx+py+vx+uy)i
+        \end{eqnarray*}
+        \item \begin{eqnarray*}
+            r(wz)&=&(rw)z \\
+            (p+iq)((u+iv)(x+iy))&=&((p+iq)(u+iv))(x+iy) \\
+            (p+iq)(ux-vy+(vx+uy)i)&=&(pu-qv+(pv+qu)i)(x+iy) \\
+            pux-pvy+p(vx+uy)i+iqux-iqvy-q(vx+uy)&=&pux+ipuy-qvx-iqvy+x(pv+qu)i-y(pv+qu) \\
+            pux-pvy-qvx-quy+(pvx+puy+qux-qvy)i&=&pux-pvy-qvx-quy+(puy-qvy+pvx+qux)i
+       \end{eqnarray*}
+    \end{enumerate}
+    \item
+    \begin{enumerate}[label=\alph*]
+        \item \begin{eqnarray*}
+            \overline{z+w}&=&\overline{z}+\overline{w} \\
+            \overline{x+iy+u+iv}&=&\overline{x+iy}+\overline{u+iv} \\
+            x-iy+u-iv&=&x-iy+u-iv \\
+            x+u-(y+v)i&=&x+u-(y+v)i
+        \end{eqnarray*}
+        \item
+        \begin{eqnarray*}
+            \overline{zw}&=&\overline{z}\overline{w} \\
+            \overline{(x+iy)(u+iv)}&=&\overline{x+iy}\overline{u+iv} \\
+            \overline{xu-vy+(xv+uv)i}&=&(x-iy)(u-iv) \\
+            xu-vy-(xv+uv)i&=&xu-i(vx+vu)+i^2vy \\
+            xu-vy-(xv+uv)i&=&xu-vy-(vx+vu)i
+        \end{eqnarray*}
+    \end{enumerate}
+    \item
+    \begin{enumerate}[label=\alph*]
+        \item \begin{eqnarray*}
+            \abs{z}^2&=&z\overline{z} \\
+            \abs{x+iy}^2&=&(x+iy)\overline{(x+iy)} \\
+            x^2+y^2&=&(x+iy)(x-yi) \\
+            x^2+y^2&=&x^2-ixy+ixy-i^2y^2 \\
+            x^2+y^2&=&x^2+y^2
+        \end{eqnarray*}
+        \item \begin{eqnarray*}
+            \abs{zw}&=&\abs{z}\abs{w} \\
+            \abs{(x+iy)(u+iv)}&=&\abs{x+iy}\abs{u+iv} \\
+            \abs{xu-vy+(xv+uy)i}&=&\sqrt{x^2+y^2}\sqrt{u^2+v^2} \\
+            \sqrt{(xu-vy)^2+(xv+uy)^2}&=&\sqrt{(x^2+y^2)(u^2+v^2)} \\
+            \sqrt{u^2x^2-2uvxy+v^2y^2+u^2y^2+2uvxy+v^2x^2}&=&\sqrt{x^2u^2+x^2v^2+y^2u^2+y^2v^2} \\
+            \sqrt{u^2x^2+v^2y^2+u^2y^2+v^2x^2}&=&\sqrt{x^2u^2+x^2v^2+y^2u^2+y^2v^2}
+        \end{eqnarray*}
+        \item \begin{eqnarray*}
+            \abs{z}&=&\abs{\overline{z}} \\
+            \abs{x+iy}&=&\abs{\overline{x+iy}} \\
+            \sqrt{x^2+y^2}&=&\abs{x-iy} \\
+            \sqrt{x^2+y^2}&=&\sqrt{x^2+y^2}
+        \end{eqnarray*}
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
