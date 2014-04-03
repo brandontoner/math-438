@@ -193,6 +193,24 @@ Proofs} \\
                 z z^{-1}&=&1
             \end{eqnarray*}
         \end{proof}
+        \item
+        \begin{enumerate}[label=\alph*]
+            \item
+            \begin{proof}[$\overline{\frac{z}{w}}=\frac{\bar{z}}{\bar{w}}$]
+                \\ Let $z=x+yi$ and $w=u+vi$
+                \begin{eqnarray*}
+                    \overline{(\frac{z}{w})}&=&\overline{(\frac{x+yi}{u+vi})} \\
+                                            &=&\overline{(\frac{x+yi}{u+vi}\frac{u-vi}{u-vi})} \\
+                                            &=&\overline{(\frac{xu+yv+(uy-xv)i}{u^2+v^2})} \\
+                                            &=&\frac{xu+yv-(uy-xv)i}{u^2+v^2} \\
+                    \frac{\bar{z}}{\bar{w}}&=&\frac{\overline{x+yi}}{\overline{u+vi}} \\
+                                           &=&\frac{x-yi}{u-vi} \\
+                                           &=&\frac{(x-yi)(u+vi)}{(u-vi)(u+vi)} \\
+                                           &=&\frac{xu+yv-(uy-xv)i}{u^2+v^2} \\ 
+                    \overline{(\frac{z}{w})}&=&\frac{\bar{z}}{\bar{w}}
+                \end{eqnarray*}
+            \end{proof}
+        \end{enumerate}
     \end{enumerate}
 \end{enumerate}
 
