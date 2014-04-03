@@ -210,6 +210,20 @@ Proofs} \\
                     \overline{(\frac{z}{w})}&=&\frac{\bar{z}}{\bar{w}}
                 \end{eqnarray*}
             \end{proof}
+            \item
+            \begin{proof}[$\abs{\frac{z}{w}}=\frac{\abs{z}}{\abs{w}}$]
+                \\ Let $z=x+yi$ and $w=u+vi$
+                \begin{eqnarray*}
+                    \abs{\frac{z}{w}}&=&\abs{\frac{x+yi}{u+vi}} \\
+                                     &=&\abs{\frac{(x+yi)(u-vi)}{(u+vi)(u-vi)}} \\
+                                     &=&\abs{\frac{xu+vy+(uy-xv)i}{u^2+v^2}} \\
+                                     &=&\abs{\frac{xu+vy}{u^2+v^2}+\frac{(uy-xv)i}{u^2+v^2}} \\
+                                     &=&\sqrt{(\frac{xu+vy}{u^2+v^2})^2 + (\frac{uy-xv}{u^2+v^2})^2 } \\
+                                     &=&\sqrt{\frac{(xu+vy)^2+(uy-vx)^2}{(u^2+v^2)^2}} \\
+                                     &=&\sqrt{\frac{(x^2+y^2)(u^2+v^2)}{(u^2+v^2)^2}} \\
+                                     &=&\sqrt{\frac{x^2+y^2}{u^2+v^2}}
+                \end{eqnarray*}
+            \end{proof}
         \end{enumerate}
     \end{enumerate}
 \end{enumerate}
