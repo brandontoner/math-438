@@ -27,7 +27,7 @@
 \newtheorem{solution}[theorem]{Solution}
 \newtheorem{summary}[theorem]{Summary}
 \newcommand\abs[1]{\left|#1\right|}
-\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\newenvironment{proof}[1][]{\textbf{Proof #1} }{\ \rule{0.5em}{0.5em}}
 \setlength{\textwidth}{7.0in}
 \setlength{\oddsidemargin}{-0.35in}
 \setlength{\topmargin}{-0.5in}
@@ -46,93 +46,154 @@ Proofs} \\
 \end{center}
 
 \begin{enumerate}
-  \item Chapter 1
-  \begin{enumerate}[label*=\arabic*.]
-    \item 
-    \begin{enumerate}[label=\alph*]
-      \item \begin{eqnarray*}
-            (a+b i)(a-b i) &=& a^2 - a b i + a b i - b^2 i^2  \\
-                           &=& a^2 - b^2 i^2 \\
-                           &=& a^2 + b^2
-            \end{eqnarray*}
-      \item \begin{eqnarray*}
-            (a+b i)^2 &=& (a+b i)(a+bi) \\
-                      &=& a^2 + abi + abi + b^2 i^2 \\
-                      &=& a^2  + 2abi - b^2
-            \end{eqnarray*}
-    \end{enumerate}
-    \item
-	\begin{enumerate}[label=\alph*]
-        \item \begin{eqnarray*}
-            zw&=&wz \\
-            (x+iy)(u+iv)&=&(u+iv)(x+iy) \\
-            xu+ixv+iyu+i^2yv&=&ux+iuy+ivx+i^2vy \\
-            ux-vy+(vx+uy)i&=&ux-vy+(vx+uy)i
-        \end{eqnarray*}
-        \item \begin{eqnarray*}
-            z(r+w)&=&zr+zw \\
-            (x+iy)(p+iq+u+iv)&=&(x+iy)(p+iq)+(x+iy)(u+iv) \\
-            px+iqx+ux+ivx+ipy+i^2yq+iuy+i^2yv&=&px+iqx+ipy+i^2yq+ux+ivx+iuy+i^2vy \\
-            px-yq-vy+(qx+vx+py+uy)i&=&px-yq-vy+(qx+py+vx+uy)i
-        \end{eqnarray*}
-        \item \begin{eqnarray*}
-            r(wz)&=&(rw)z \\
-            (p+iq)((u+iv)(x+iy))&=&((p+iq)(u+iv))(x+iy) \\
-            (p+iq)(ux-vy+(vx+uy)i)&=&(pu-qv+(pv+qu)i)(x+iy) \\
-            pux-pvy+p(vx+uy)i+iqux-iqvy-q(vx+uy)&=&pux+ipuy-qvx-iqvy+x(pv+qu)i-y(pv+qu) \\
-            pux-pvy-qvx-quy+(pvx+puy+qux-qvy)i&=&pux-pvy-qvx-quy+(puy-qvy+pvx+qux)i
-       \end{eqnarray*}
-    \end{enumerate}
-    \item
-    \begin{enumerate}[label=\alph*]
-        \item \begin{eqnarray*}
-            \overline{z+w}&=&\overline{z}+\overline{w} \\
-            \overline{x+iy+u+iv}&=&\overline{x+iy}+\overline{u+iv} \\
-            x-iy+u-iv&=&x-iy+u-iv \\
-            x+u-(y+v)i&=&x+u-(y+v)i
-        \end{eqnarray*}
+    \item Chapter 1
+    \begin{enumerate}[label*=\arabic*.]
+        \item 
+        \begin{enumerate}[label=\alph*]
+            \item 
+            \begin{proof}[$(a+bi)(a-bi)=a^2 + b^2$]
+                \begin{eqnarray*}
+                    (a+bi)(a-bi)&=& a^2 - abi + abi - b^2i^2 \\
+                                &=& a^2 - b^2 i^2            \\
+                                &=& a^2 + b^2
+                \end{eqnarray*}
+            \end{proof}
+            \item
+            \begin{proof}[$(a+bi)^2=a^2 - b^2 + 2abi$]
+                \begin{eqnarray*}
+                    (a+bi)^2 &=& (a+bi)(a+bi)              \\
+                             &=& a^2 + abi + abi + b^2 i^2 \\
+                             &=& a^2 - b^2 + 2abi
+                \end{eqnarray*}
+            \end{proof}
+        \end{enumerate}
         \item
-        \begin{eqnarray*}
-            \overline{zw}&=&\overline{z}\overline{w} \\
-            \overline{(x+iy)(u+iv)}&=&\overline{x+iy}\overline{u+iv} \\
-            \overline{xu-vy+(xv+uv)i}&=&(x-iy)(u-iv) \\
-            xu-vy-(xv+uv)i&=&xu-i(vx+vu)+i^2vy \\
-            xu-vy-(xv+uv)i&=&xu-vy-(vx+vu)i
-        \end{eqnarray*}
+    	\begin{enumerate}[label=\alph*]
+            \item
+            \begin{proof}[$zw=wz$]
+                \\ Let $z=x+yi$ and $w=u+vi$
+                \begin{eqnarray*}
+                    zw&=&(x+iy)(u+iv) \\
+                      &=&ux+xvi+yui+yvi^2 \\
+                      &=&ux-vy+(vx+uy)i \\
+                    wz&=&(u+iv)(x+iy) \\
+                      &=&ux+iuy+ivx+vyi^2 \\
+                      &=&ux-vy+(vx+uy)i \\
+                    zw&=&wz
+                \end{eqnarray*}
+            \end{proof}
+            \item
+            \begin{proof}[$z(r+w)=zr+zw$]
+                \\ Let $z=x+yi$, $w=u+vi$, and $r=p+qi$
+                \begin{eqnarray*}
+                    z(r+w)&=&(x+iy)(p+iq+u+iv) \\
+                          &=&px+iqx+ux+ivx+ipy+i^2yq+iuy+i^2yv \\
+                          &=&px-yq-vy+(qx+vx+py+uy)i \\
+                    zr+zw &=&(x+iy)(p+iq)+(x+iy)(u+iv) \\
+                          &=&px+iqx+ipy+i^2yq+ux+ivx+iuy+i^2vy \\
+                          &=&px-yq-vy+(qx+py+vx+uy)i \\
+                    z(r+w)&=&zr+zw
+                \end{eqnarray*}
+            \end{proof}
+            \item
+            \begin{proof}[$r(wz)=(rw)z$]
+                \\ Let $z=x+yi$, $w=u+vi$, and $r=p+qi$
+                \begin{eqnarray*}
+                    r(wz)&=&(p+iq)((u+iv)(x+iy)) \\
+                         &=&(p+iq)(ux-vy+(vx+uy)i) \\
+                         &=&pux-pvy+p(vx+uy)i+iqux-iqvy-q(vx+uy) \\
+                         &=&pux-pvy-qvx-quy+(pvx+puy+qux-qvy)i \\
+                    (rw)z&=&((p+iq)(u+iv))(x+iy) \\
+                         &=&(pu-qv+(pv+qu)i)(x+iy) \\
+                         &=&pux+ipuy-qvx-iqvy+x(pv+qu)i-y(pv+qu) \\
+                         &=&pux-pvy-qvx-quy+(puy-qvy+pvx+qux)i \\
+                    r(wz)&=&(rw)z 
+               \end{eqnarray*}
+            \end{proof}
+        \end{enumerate}
+        \item
+        \begin{enumerate}[label=\alph*]
+            \item
+            \begin{proof}[$\overline{z+w}=\overline{z}+\overline{w}$]
+                \\ Let $z=x+yi$ and $w=u+vi$
+                \begin{eqnarray*}
+                    \overline{z+w}&=&\overline{x+u+(y+v)i} \\
+                                  &=&x+u-(y+v)i \\
+                    \overline{z}+\overline{w}&=&\overline{x+yi}+\overline{u+vi} \\
+                                             &=&x-iy+u-iv \\
+                                             &=&x+u-(y+v)i \\
+                    \overline{z+w}&=&\overline{z}+\overline{w}
+                \end{eqnarray*}
+            \end{proof}
+            \item
+            \begin{proof}[$\overline{zw}=\bar{z}\bar{w}$]
+                \\ Let $z=x+yi$ and $w=u+vi$
+                \begin{eqnarray*}
+                    \overline{zw}&=&\overline{(x+yi)(u+vi)} \\
+                                 &=&\overline{xu-vy+(xv+uy)i} \\
+                                 &=&xu-vy-(xv+uy)i \\
+                    \bar{z}\bar{w}&=&(\overline{x+iy})(\overline{u+iv}) \\
+                                  &=&(x-iy)(u-vi) \\
+                                  &=&xu-vy-(vx+uy)i \\
+                    \overline{zw}&=&\bar{z}\bar{w}
+                \end{eqnarray*}
+            \end{proof}
+        \end{enumerate}
+        \item
+        \begin{enumerate}[label=\alph*]
+            \item
+            \begin{proof}[$\abs{z}^2=z\overline{z}$]
+                \\ Let $z=x+yi$
+                \begin{eqnarray*}
+                    \abs{z}^2&=&\abs{x+yi}^2 \\
+                             &=&x^2+y^2 \\
+                    z\overline{z}&=&(x+iy)\overline{(x+iy)} \\
+                                 &=&(x+iy)(x-yi) \\
+                                 &=&x^2-xyi+xyi+y^2 \\
+                                 &=&x^2+y^2 \\
+                    \abs{z}^2&=&z\overline{z}
+                \end{eqnarray*}
+            \end{proof}
+            \item
+            \begin{proof}[$\abs{zw}=\abs{z}\abs{w}$]
+                \\ Let $z=x+yi$ and $w=u+vi$
+                \begin{eqnarray*}
+                    \abs{zw}&=&\abs{(x+iy)(u+iv)} \\
+                            &=&\abs{xu-vy+(xv+uy)i} \\
+                            &=&\sqrt{(xu-vy)^2+(xv+uy)^2} \\
+                            &=&\sqrt{u^2x^2-2uvxy+v^2y^2+u^2y^2+2uvxy+v^2x^2} \\
+                            &=&\sqrt{u^2x^2+v^2y^2+u^2y^2+v^2x^2} \\
+                    \abs{z}\abs{w}&=&\abs{x+iy}\abs{u+iv} \\
+                                  &=&\sqrt{x^2+y^2}\sqrt{u^2+v^2} \\
+                                  &=&\sqrt{(x^2+y^2)(u^2+v^2)} \\
+                                  &=&\sqrt{x^2u^2+x^2v^2+y^2u^2+y^2v^2} \\
+                    \abs{zw}&=&\abs{z}\abs{w}
+                \end{eqnarray*}
+            \end{proof}
+            \item
+            \begin{proof}[$\abs{z}=\abs{\overline{z}}$]
+                \\ Let $z=x+yi$
+                \begin{eqnarray*}
+                    \abs{z}&=&\abs{x+yi} \\
+                           &=&\sqrt{x^2+y^2} \\
+                    \abs{\overline{z}}&=&\abs{\overline{x+yi}} \\
+                                      &=&\abs{x-iy} \\
+                                      &=&\sqrt{x^2+y^2} \\
+                    \abs{z}&=&\abs{\overline{z}} 
+                \end{eqnarray*}
+            \end{proof}
+        \end{enumerate}
+        \item 
+        \begin{proof}
+            \begin{eqnarray*}
+                \text{Let } z&\neq&0 \\
+                \text{Let } z^{-1}&=&\frac{\overline{z}}{\abs{z}^2} \\
+                z z^{-1}&=&\frac{z\overline{z}}{\abs{z}^2} \\
+                z z^{-1}&=&\frac{\abs{z}^2}{\abs{z}^2} \text{ by 1.4} \\
+                z z^{-1}&=&1
+            \end{eqnarray*}
+        \end{proof}
     \end{enumerate}
-    \item
-    \begin{enumerate}[label=\alph*]
-        \item \begin{eqnarray*}
-            \abs{z}^2&=&z\overline{z} \\
-            \abs{x+iy}^2&=&(x+iy)\overline{(x+iy)} \\
-            x^2+y^2&=&(x+iy)(x-yi) \\
-            x^2+y^2&=&x^2-ixy+ixy-i^2y^2 \\
-            x^2+y^2&=&x^2+y^2
-        \end{eqnarray*}
-        \item \begin{eqnarray*}
-            \abs{zw}&=&\abs{z}\abs{w} \\
-            \abs{(x+iy)(u+iv)}&=&\abs{x+iy}\abs{u+iv} \\
-            \abs{xu-vy+(xv+uy)i}&=&\sqrt{x^2+y^2}\sqrt{u^2+v^2} \\
-            \sqrt{(xu-vy)^2+(xv+uy)^2}&=&\sqrt{(x^2+y^2)(u^2+v^2)} \\
-            \sqrt{u^2x^2-2uvxy+v^2y^2+u^2y^2+2uvxy+v^2x^2}&=&\sqrt{x^2u^2+x^2v^2+y^2u^2+y^2v^2} \\
-            \sqrt{u^2x^2+v^2y^2+u^2y^2+v^2x^2}&=&\sqrt{x^2u^2+x^2v^2+y^2u^2+y^2v^2}
-        \end{eqnarray*}
-        \item \begin{eqnarray*}
-            \abs{z}&=&\abs{\overline{z}} \\
-            \abs{x+iy}&=&\abs{\overline{x+iy}} \\
-            \sqrt{x^2+y^2}&=&\abs{x-iy} \\
-            \sqrt{x^2+y^2}&=&\sqrt{x^2+y^2}
-        \end{eqnarray*}
-    \end{enumerate}
-    \item 
-        \begin{eqnarray*}
-            \text{Let } z&\neq&0 \\
-            \text{Let } z^{-1}&=&\frac{\overline{z}}{\abs{z}^2} \\
-            z z^{-1}&=&\frac{z\overline{z}}{\abs{z}^2} \\
-            z z^{-1}&=&\frac{\abs{z}^2}{\abs{z}^2} \text{ by 1.4} \\
-            z z^{-1}&=&1
-        \end{eqnarray*}
-  \end{enumerate}
 \end{enumerate}
 
 \end{document}
