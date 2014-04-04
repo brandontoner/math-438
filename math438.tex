@@ -183,19 +183,19 @@ Proofs} \\
                 \end{eqnarray*}
             \end{proof}
         \end{enumerate}
-        \item 
-        \begin{proof}
+        \item %1.5
+        \begin{proof}[$z^{-1}=\frac{\overline{z}}{\abs{z}^2} \Leftrightarrow z z^{-1}=1$]
+            \\ Let $z\neq0$
             \begin{eqnarray*}
-                \text{Let } z&\neq&0 \\
-                \text{Let } z^{-1}&=&\frac{\overline{z}}{\abs{z}^2} \\
-                z z^{-1}&=&\frac{z\overline{z}}{\abs{z}^2} \\
-                z z^{-1}&=&\frac{\abs{z}^2}{\abs{z}^2} \text{ by 1.4} \\
-                z z^{-1}&=&1
+                z^{-1}&=&\frac{\overline{z}}{\abs{z}^2} \\
+                zz^{-1}&=&\frac{z\overline{z}}{\abs{z}^2} \\
+                       &=&\frac{\abs{z}^2}{\abs{z}^2} \text{ by 1.4} \\
+                       &=&1
             \end{eqnarray*}
         \end{proof}
-        \item
+        \item %1.6
         \begin{enumerate}[label=\alph*]
-            \item
+            \item %1.6.a
             \begin{proof}[$\overline{\frac{z}{w}}=\frac{\bar{z}}{\bar{w}}$]
                 \\ Let $z=x+yi$ and $w=u+vi$
                 \begin{eqnarray*}
@@ -210,7 +210,7 @@ Proofs} \\
                     \overline{(\frac{z}{w})}&=&\frac{\bar{z}}{\bar{w}}
                 \end{eqnarray*}
             \end{proof}
-            \item
+            \item %1.6.b
             \begin{proof}[$\abs{\frac{z}{w}}=\frac{\abs{z}}{\abs{w}}$]
                 \\ Let $z=x+yi$ and $w=u+vi$
                 \begin{eqnarray*}
@@ -230,7 +230,7 @@ Proofs} \\
         \item %1.7
         \begin{enumerate}[label=\alph*]
             \item %1.7.a
-            \begin{proof}
+            \begin{proof}[$\abs{\frac{z-1}{z+1}}^2=\frac{(x-1)^2+y^2}{(x+1)^2+y^2}$]
                 \\ Let $z=x+yi$
                 \begin{eqnarray*}
                     \abs{\frac{z-1}{z+1}}^2&=&\abs{\frac{x-1+yi}{x+1+yi}}^2 \\
@@ -239,7 +239,7 @@ Proofs} \\
                 \end{eqnarray*}
             \end{proof}
             \item %1.7.b
-            \begin{proof}
+            \begin{proof}[$\abs{\frac{1+4i}{4+i}}=1$]
                 \begin{eqnarray*}
                     \abs{\frac{1+4i}{4+i}}&=&\frac{\abs{1+4i}}{\abs{4+i}} \text{ by 1.6.b} \\
                                           &=&\frac{\sqrt{1^2+4^2}}{\sqrt{4^2+1^2}} \\
@@ -247,14 +247,14 @@ Proofs} \\
                 \end{eqnarray*}
             \end{proof}
             \item %1.7.c
-            \begin{proof}
+            \begin{proof}[$\abs{\cos(\theta)+i \sin(\theta)}=1$]
                 \begin{eqnarray*}
                     \abs{\cos(\theta)+i \sin(\theta)}&=&\sqrt{\cos^2(\theta)+\sin^2(\theta)} \\
                                                      &=&1
                 \end{eqnarray*}
             \end{proof}
             \item %1.7.d
-            \begin{proof}
+            \begin{proof}[$\abs{\frac{3+4i}{4+3i}}=1$]
                 \begin{eqnarray*}
                     \abs{\frac{3+4i}{4+3i}}&=&\frac{\abs{3+4i}}{\abs{4+3i}} \text{ by 1.6.b} \\
                                            &=&\frac{\sqrt{3^2+4^2}}{\sqrt{4^2+3^2}} \\
@@ -265,15 +265,15 @@ Proofs} \\
         \item %1.8
         \begin{enumerate}[label=\alph*]
             \item %1.8.a
-            \begin{proof}
+            \begin{proof}[$\frac{1}{2+i}=\frac{2}{5}-\frac{1}{5}i$]
                 \begin{eqnarray*}
                     \frac{1}{2+i}&=&\frac{1}{2+i}\frac{2-i}{2-i} \\
                                  &=&\frac{2-i}{2^2+1^2} \\
-                                 &=&\frac{2/5}-\frac{1}{5}i
+                                 &=&\frac{2}{5}-\frac{1}{5}i
                 \end{eqnarray*}
             \end{proof}
             \item %1.8.b
-            \begin{proof}
+            \begin{proof}[$\frac{(1+i)^2}{3+2i}=\frac{4}{13}+\frac{6}{13}i$]
                 \begin{eqnarray*}
                     \frac{(1+i)^2}{3+2i}&=&\frac{2i}{3+2i} \\
                                         &=&\frac{2i}{3+2i} \frac{3-2i}{3+2i} \\
@@ -282,7 +282,7 @@ Proofs} \\
                 \end{eqnarray*}
             \end{proof}
             \item %1.8.c
-            \begin{proof}
+            \begin{proof}[$\frac{2+i}{3+4i}=\frac{2}{5}-\frac{1}{5}i$]
                 \begin{eqnarray*}
                     \frac{2+i}{3+4i}&=&\frac{2+i}{3+4i} \frac{3-4i}{3-4i} \\
                                     &=&\frac{10-5i}{3^2+4^2} \\
@@ -290,13 +290,14 @@ Proofs} \\
                 \end{eqnarray*}
             \end{proof}
             \item %1.8.d
-            \begin{proof}
+            \begin{proof}[$\frac{1}{z^2}=\frac{\overline{z^2}}{(z\overline{z})^2}$]
                 \\ Let $z=x+yi$
                 \begin{eqnarray*}
                     \frac{1}{z^2}&=&\frac{1}{(x+yi)^2} \\
                                  &=&\frac{1}{x^2-y^2+2xyi} \\
                                  &=&\frac{1}{x^2-y^2+2xyi}\frac{x^2-y^2-2xyi}{x^2-y^2-2xyi} \\
-                                 &=&\frac{x^2-y^2-2xyi}{(x^2-y^2)^2}
+                                 &=&\frac{x^2-y^2-2xyi}{(x^2-y^2)^2} \\
+                                 &=&\frac{\overline{z^2}}{(z\overline{z})^2}
                 \end{eqnarray*}
             \end{proof}
         \end{enumerate}
