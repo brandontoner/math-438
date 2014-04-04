@@ -27,7 +27,7 @@
 \newtheorem{solution}[theorem]{Solution}
 \newtheorem{summary}[theorem]{Summary}
 \newcommand\abs[1]{\left|#1\right|}
-\newenvironment{proof}[1][]{\textbf{Proof #1} }{\ \rule{0.5em}{0.5em}}
+\newenvironment{proof}[1][]{\begin{samepage}\textbf{Proof #1} }{\end{samepage}}
 \setlength{\textwidth}{7.0in}
 \setlength{\oddsidemargin}{-0.35in}
 \setlength{\topmargin}{-0.5in}
@@ -221,11 +221,97 @@ Proofs} \\
                                      &=&\sqrt{(\frac{xu+vy}{u^2+v^2})^2 + (\frac{uy-xv}{u^2+v^2})^2 } \\
                                      &=&\sqrt{\frac{(xu+vy)^2+(uy-vx)^2}{(u^2+v^2)^2}} \\
                                      &=&\sqrt{\frac{(x^2+y^2)(u^2+v^2)}{(u^2+v^2)^2}} \\
-                                     &=&\sqrt{\frac{x^2+y^2}{u^2+v^2}}
+                                     &=&\sqrt{\frac{x^2+y^2}{u^2+v^2}} \\
+                                     &=&\frac{\sqrt{x^2+y^2}}{\sqrt{u^2+v^2}} \\
+                                     &=&\frac{\abs{z}}{\abs{w}}
                 \end{eqnarray*}
             \end{proof}
         \end{enumerate}
+        \item %1.7
+        \begin{enumerate}[label=\alph*]
+            \item %1.7.a
+            \begin{proof}
+                \\ Let $z=x+yi$
+                \begin{eqnarray*}
+                    \abs{\frac{z-1}{z+1}}^2&=&\abs{\frac{x-1+yi}{x+1+yi}}^2 \\
+                                           &=&\frac{\abs{x-1+yi}}{\abs{x+1+yi}} \text{ by 1.6.b} \\
+                                           &=&\frac{(x-1)^2+y^2}{(x+1)^2+y^2}
+                \end{eqnarray*}
+            \end{proof}
+            \item %1.7.b
+            \begin{proof}
+                \begin{eqnarray*}
+                    \abs{\frac{1+4i}{4+i}}&=&\frac{\abs{1+4i}}{\abs{4+i}} \text{ by 1.6.b} \\
+                                          &=&\frac{\sqrt{1^2+4^2}}{\sqrt{4^2+1^2}} \\
+                                          &=&1
+                \end{eqnarray*}
+            \end{proof}
+            \item %1.7.c
+            \begin{proof}
+                \begin{eqnarray*}
+                    \abs{\cos(\theta)+i \sin(\theta)}&=&\sqrt{\cos^2(\theta)+\sin^2(\theta)} \\
+                                                     &=&1
+                \end{eqnarray*}
+            \end{proof}
+            \item %1.7.d
+            \begin{proof}
+                \begin{eqnarray*}
+                    \abs{\frac{3+4i}{4+3i}}&=&\frac{\abs{3+4i}}{\abs{4+3i}} \text{ by 1.6.b} \\
+                                           &=&\frac{\sqrt{3^2+4^2}}{\sqrt{4^2+3^2}} \\
+                                           &=&1
+                \end{eqnarray*}
+            \end{proof}
+        \end{enumerate}
+        \item %1.8
+        \begin{enumerate}[label=\alph*]
+            \item %1.8.a
+            \begin{proof}
+                \begin{eqnarray*}
+                    \frac{1}{2+i}&=&\frac{1}{2+i}\frac{2-i}{2-i} \\
+                                 &=&\frac{2-i}{2^2+1^2} \\
+                                 &=&\frac{2/5}-\frac{1}{5}i
+                \end{eqnarray*}
+            \end{proof}
+            \item %1.8.b
+            \begin{proof}
+                \begin{eqnarray*}
+                    \frac{(1+i)^2}{3+2i}&=&\frac{2i}{3+2i} \\
+                                        &=&\frac{2i}{3+2i} \frac{3-2i}{3+2i} \\
+                                        &=&\frac{4+6i}{3^2+2^2} \\
+                                        &=&\frac{4}{13}+\frac{6}{13}i
+                \end{eqnarray*}
+            \end{proof}
+            \item %1.8.c
+            \begin{proof}
+                \begin{eqnarray*}
+                    \frac{2+i}{3+4i}&=&\frac{2+i}{3+4i} \frac{3-4i}{3-4i} \\
+                                    &=&\frac{10-5i}{3^2+4^2} \\
+                                    &=&\frac{2}{5}-\frac{1}{5}i
+                \end{eqnarray*}
+            \end{proof}
+            \item %1.8.d
+            \begin{proof}
+                \\ Let $z=x+yi$
+                \begin{eqnarray*}
+                    \frac{1}{z^2}&=&\frac{1}{(x+yi)^2} \\
+                                 &=&\frac{1}{x^2-y^2+2xyi} \\
+                                 &=&\frac{1}{x^2-y^2+2xyi}\frac{x^2-y^2-2xyi}{x^2-y^2-2xyi} \\
+                                 &=&\frac{x^2-y^2-2xyi}{(x^2-y^2)^2}
+                \end{eqnarray*}
+            \end{proof}
+        \end{enumerate}
+        \item
+        \begin{proof}[$2c=z\xi+\overline{z\xi} \Leftrightarrow c=ax-by$]
+            \\ Let $z=x+yi$ and $\xi=a+bi$
+            \begin{eqnarray*}
+                2c&=&z\xi + \overline{z\xi} \\
+                  &=&(x+yi)(a+bi) + \overline{(x+yi)(a+bi)} \\
+                  &=&ax-by+(ay+bx)i+\overline{ax-by+(ay+bx)i} \\
+                  &=&ax-by+(ay+bx)i+ax-by-(ay+bx)i \\
+                  &=&2(ax-by) \\
+                 c&=&ax-by
+            \end{eqnarray*}
+        \end{proof}
     \end{enumerate}
 \end{enumerate}
-
 \end{document}
