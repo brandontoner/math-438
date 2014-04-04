@@ -73,11 +73,11 @@ Proofs} \\
             \begin{proof}[$zw=wz$]
                 \\ Let $z=x+yi$ and $w=u+vi$
                 \begin{eqnarray*}
-                    zw&=&(x+iy)(u+iv) \\
+                    zw&=&(x+yi)(u+vi) \\
                       &=&ux+xvi+yui+yvi^2 \\
                       &=&ux-vy+(vx+uy)i \\
-                    wz&=&(u+iv)(x+iy) \\
-                      &=&ux+iuy+ivx+vyi^2 \\
+                    wz&=&(u+vi)(x+yi) \\
+                      &=&ux+uyi+vxi+vyi^2 \\
                       &=&ux-vy+(vx+uy)i \\
                     zw&=&wz
                 \end{eqnarray*}
@@ -86,11 +86,11 @@ Proofs} \\
             \begin{proof}[$z(r+w)=zr+zw$]
                 \\ Let $z=x+yi$, $w=u+vi$, and $r=p+qi$
                 \begin{eqnarray*}
-                    z(r+w)&=&(x+iy)(p+iq+u+iv) \\
-                          &=&px+iqx+ux+ivx+ipy+i^2yq+iuy+i^2yv \\
+                    z(r+w)&=&(x+yi)(p+qi+u+vi) \\
+                          &=&px+qxi+ux+vxi+pyi+i^2yq+uyi+yvi^2 \\
                           &=&px-yq-vy+(qx+vx+py+uy)i \\
-                    zr+zw &=&(x+iy)(p+iq)+(x+iy)(u+iv) \\
-                          &=&px+iqx+ipy+i^2yq+ux+ivx+iuy+i^2vy \\
+                    zr+zw &=&(x+yi)(p+qi)+(x+yi)(u+vi) \\
+                          &=&px+qxi+pyi+i^2yq+ux+vxi+uyi+vyi^2 \\
                           &=&px-yq-vy+(qx+py+vx+uy)i \\
                     z(r+w)&=&zr+zw
                 \end{eqnarray*}
@@ -99,13 +99,13 @@ Proofs} \\
             \begin{proof}[$r(wz)=(rw)z$]
                 \\ Let $z=x+yi$, $w=u+vi$, and $r=p+qi$
                 \begin{eqnarray*}
-                    r(wz)&=&(p+iq)((u+iv)(x+iy)) \\
-                         &=&(p+iq)(ux-vy+(vx+uy)i) \\
-                         &=&pux-pvy+p(vx+uy)i+iqux-iqvy-q(vx+uy) \\
+                    r(wz)&=&(p+qi)((u+vi)(x+yi)) \\
+                         &=&(p+qi)(ux-vy+(vx+uy)i) \\
+                         &=&pux-pvy+p(vx+uy)i+quxi-qvyi-q(vx+uy) \\
                          &=&pux-pvy-qvx-quy+(pvx+puy+qux-qvy)i \\
-                    (rw)z&=&((p+iq)(u+iv))(x+iy) \\
-                         &=&(pu-qv+(pv+qu)i)(x+iy) \\
-                         &=&pux+ipuy-qvx-iqvy+x(pv+qu)i-y(pv+qu) \\
+                    (rw)z&=&((p+qi)(u+vi))(x+yi) \\
+                         &=&(pu-qv+(pv+qu)i)(x+yi) \\
+                         &=&pux+puyi-qvx-qvyi+x(pv+qu)i-y(pv+qu) \\
                          &=&pux-pvy-qvx-quy+(puy-qvy+pvx+qux)i \\
                     r(wz)&=&(rw)z 
                \end{eqnarray*}
@@ -120,7 +120,7 @@ Proofs} \\
                     \overline{z+w}&=&\overline{x+u+(y+v)i} \\
                                   &=&x+u-(y+v)i \\
                     \overline{z}+\overline{w}&=&\overline{x+yi}+\overline{u+vi} \\
-                                             &=&x-iy+u-iv \\
+                                             &=&x-yi+u-vi \\
                                              &=&x+u-(y+v)i \\
                     \overline{z+w}&=&\overline{z}+\overline{w}
                 \end{eqnarray*}
@@ -132,8 +132,8 @@ Proofs} \\
                     \overline{zw}&=&\overline{(x+yi)(u+vi)} \\
                                  &=&\overline{xu-vy+(xv+uy)i} \\
                                  &=&xu-vy-(xv+uy)i \\
-                    \bar{z}\bar{w}&=&(\overline{x+iy})(\overline{u+iv}) \\
-                                  &=&(x-iy)(u-vi) \\
+                    \bar{z}\bar{w}&=&(\overline{x+yi})(\overline{u+vi}) \\
+                                  &=&(x-yi)(u-vi) \\
                                   &=&xu-vy-(vx+uy)i \\
                     \overline{zw}&=&\bar{z}\bar{w}
                 \end{eqnarray*}
@@ -147,8 +147,8 @@ Proofs} \\
                 \begin{eqnarray*}
                     \abs{z}^2&=&\abs{x+yi}^2 \\
                              &=&x^2+y^2 \\
-                    z\overline{z}&=&(x+iy)\overline{(x+iy)} \\
-                                 &=&(x+iy)(x-yi) \\
+                    z\overline{z}&=&(x+yi)\overline{(x+yi)} \\
+                                 &=&(x+yi)(x-yi) \\
                                  &=&x^2-xyi+xyi+y^2 \\
                                  &=&x^2+y^2 \\
                     \abs{z}^2&=&z\overline{z}
@@ -158,12 +158,12 @@ Proofs} \\
             \begin{proof}[$\abs{zw}=\abs{z}\abs{w}$]
                 \\ Let $z=x+yi$ and $w=u+vi$
                 \begin{eqnarray*}
-                    \abs{zw}&=&\abs{(x+iy)(u+iv)} \\
+                    \abs{zw}&=&\abs{(x+yi)(u+vi)} \\
                             &=&\abs{xu-vy+(xv+uy)i} \\
                             &=&\sqrt{(xu-vy)^2+(xv+uy)^2} \\
                             &=&\sqrt{u^2x^2-2uvxy+v^2y^2+u^2y^2+2uvxy+v^2x^2} \\
                             &=&\sqrt{u^2x^2+v^2y^2+u^2y^2+v^2x^2} \\
-                    \abs{z}\abs{w}&=&\abs{x+iy}\abs{u+iv} \\
+                    \abs{z}\abs{w}&=&\abs{x+yi}\abs{u+vi} \\
                                   &=&\sqrt{x^2+y^2}\sqrt{u^2+v^2} \\
                                   &=&\sqrt{(x^2+y^2)(u^2+v^2)} \\
                                   &=&\sqrt{x^2u^2+x^2v^2+y^2u^2+y^2v^2} \\
@@ -177,7 +177,7 @@ Proofs} \\
                     \abs{z}&=&\abs{x+yi} \\
                            &=&\sqrt{x^2+y^2} \\
                     \abs{\overline{z}}&=&\abs{\overline{x+yi}} \\
-                                      &=&\abs{x-iy} \\
+                                      &=&\abs{x-yi} \\
                                       &=&\sqrt{x^2+y^2} \\
                     \abs{z}&=&\abs{\overline{z}} 
                 \end{eqnarray*}
@@ -300,7 +300,7 @@ Proofs} \\
                 \end{eqnarray*}
             \end{proof}
         \end{enumerate}
-        \item
+        \item %1.9
         \begin{proof}[$2c=z\xi+\overline{z\xi} \Leftrightarrow c=ax-by$]
             \\ Let $z=x+yi$ and $\xi=a+bi$
             \begin{eqnarray*}
