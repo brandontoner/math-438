@@ -380,6 +380,42 @@ Proofs} \\
         \item %1.17
         \item %1.18
         \item %1.19
+        \item %1.20
+        \item %1.21
+        \item %1.22
+        \item %1.23
+        \begin{enumerate}[label=\alph*]
+            \item %1.23.a
+                $(1+i)^5=\sqrt{2}^5(\cos(\frac{5 \pi}{4}) + i \sin(\frac{5 \pi}{4}))$
+            \item %1.23.b
+                $(1+\sqrt{3}i)^5=32(\cos(\frac{5 \pi}{3}) + i \sin(\frac{5 \pi}{3}))$
+            \item %1.23.c
+                $(1+i)^{24}=4096(\cos(\frac{24 \pi}{4}) + i \sin(\frac{24 \pi}{4}))$
+        \end{enumerate}
+        \item %1.24
+        \item %1.25
+        \item %1.26
+        \begin{enumerate}[label=\alph*]
+            \item %1.26.a
+            \begin{proof}[$\abs{e^{i \theta}}=1$]
+                \begin{eqnarray*}
+                    \abs{e^{i \theta}} &=& \abs{\cos(\theta) + i \sin(\theta)} \\
+                                       &=& \sqrt{\cos^2(\theta) + \sin^2(\theta)} \\
+                                       &=& 1
+                \end{eqnarray*}
+            \end{proof}
+            \item %1.26.b
+            \begin{proof}[$\overline{e^{i\theta}}=e^{-i\theta}$]
+                \begin{eqnarray*}
+                    \overline{e^{i\theta}}&=& \overline{\cos(\theta) + i \sin(\theta)} \\
+                                          &=& \cos(\theta) - i \sin(\theta) \\
+                                          &=& \cos(\theta) + i \sin(-\theta) \\
+                                          &=& \cos(-\theta) + i \sin(-\theta) \\
+                                          &=& e^{-i\theta}
+                \end{eqnarray*}
+            \end{proof}
+        \end{enumerate}
+        \item
     \end{enumerate}
 \end{enumerate}
 \end{document}
