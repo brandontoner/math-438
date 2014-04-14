@@ -1,0 +1,111 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{enumitem}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\EXP[1]{\exp\left(#1\right)}
+\newenvironment{proof}[1][]{\begin{samepage}\textbf{Proof #1} \\ }{\\ \rule{0.5em}{0.5em} \end{samepage} \\}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\begin{document}
+
+\begin{flushright}
+\textbf{Brandon Toner \\
+\today}
+\end{flushright}
+
+\begin{center}
+\textbf{MATH 438: Introduction to Complex Variables \\
+Assignment 1} \\
+\end{center}
+
+\begin{enumerate}
+    \setcounter{enumi}{4}
+    \item %5
+    \begin{enumerate}[label=\alph*]
+        \item %5.a
+        \begin{proof}[$1 + z + z^2 + ... + z^n = \frac{1 - z^{n+1}}{1-z}$]
+            \begin{align*}
+                1 + z + z^2 + ... + z^n &= \sum\limits_{j=0}^n (z^j) \\
+                                        &= \frac{1 - z}{1-z} \sum\limits_{j=0}^n (z^j) \\
+                                        &= \frac{1}{1-z} \left( \sum\limits_{j=0}^n (z^j) - z \sum\limits_{j=0}^n (z^j) \right)  = \frac{1}{1-z} \left( \sum\limits_{j=0}^n (z^j) - \sum\limits_{j=0}^{n+1} (z^j) \right) \\
+                                        &= \frac{1}{1-z} \left( z^0 - z^{n+1} \right) \\
+                                        &= \frac{1 - z^{n+1}}{1-z}
+            \end{align*}
+        \end{proof}
+    \end{enumerate}
+    \item
+    \begin{enumerate}[label=\alph*]
+        \item %6.a
+        \begin{proof}[$\prod\limits_{j=0}^{n-1}{(z-\omega_j)} = z^n - 1$]
+            The roots of the function $z^n - 1$ are $\omega_0, \omega_1, ... ,\omega_{n-1}$.
+            Therefore, the functions $\prod\limits_{j=0}^{n-1}{(z-\omega_j)}$ and $z^n - 1$ must be proportional.
+            Since the coefficient of the $z^n$ term of $\prod\limits_{j=0}^{n-1}{(z-\omega_j)}$ must be $1$, the functions must be equal.
+        \end{proof}
+        \item %6.b
+        \begin{proof}[$\omega_0+...+\omega_{n-1} = 0$]
+        \begin{align*}
+            \omega_j &= \EXP{\frac{2 \pi j i}{n}}\\
+            \omega_0+...+\omega_{n-1} &= \EXP{0} + \EXP{\frac{2\pi i}{n}} +  \EXP{\frac{4\pi i}{n}} +  ... + \EXP{\frac{2 \pi (n-1) i}{n}} \\
+                                      &= \EXP{\frac{2\pi i}{n}}^0+\EXP{\frac{2\pi i}{n}}^1+\EXP{\frac{2\pi i}{n}}^2+...+\EXP{\frac{2\pi i}{n}}^{n-1} \\
+                                      &= \sum\limits_{j=0}^{n-1} \EXP{\frac{2\pi i}{n}}^j \\
+                                      &= \frac{1-\EXP{\frac{2\pi i}{n}}^n}{1 - \EXP{\frac{2\pi i}{n}}} = \frac{1-\EXP{2\pi i}}{1 - \EXP{\frac{2\pi i}{n}}} \\
+                                      &= 0
+        \end{align*}
+        \end{proof}
+        \item %6.c
+        \begin{proof}[$\prod\limits_{j=0}^{n-1} \omega_j = (-1)^{n-1}$]
+            \begin{align*}
+                \prod\limits_{j=0}^{n-1} \omega_j &= \prod\limits_{j=0}^{n-1} \EXP{\frac{2\pi ji}{n}} \\
+                                                  &= \EXP{\sum\limits_{j=0}^{n-1}\frac{2\pi j i}{n}} = \EXP{\frac{2\pi i}{n} \sum\limits_{j=0}^{n-1}j} \\
+                                                  &= \EXP{\frac{2\pi i}{n} \frac{n(n-1)}{2}} \\
+                                                  &= \EXP{\pi (n - 1) i} \\
+                                                  &= (-1)^{n-1}
+            \end{align*}
+        \end{proof}
+        \item %6.d
+        \begin{proof}[$\sum\limits_{j=0}^{n-1}{\omega_j^k}=\left\{ \begin{array} {lr} 0, & 1 \leq k \leq n-1 \\ n, & k=n \end{array} \right. $]
+            \underline{Case 1}: $k=n$
+            \begin{eqnarray*}
+                \sum\limits_{j=0}^{n-1}{\omega_j^n} &=& \sum\limits_{j=0}^{n-1}{1} \\
+                                                    &=& n
+            \end{eqnarray*}
+            \underline{Case 2}: $1 \leq k \leq n-1$
+            \begin{align*}
+                \sum\limits_{j=0}^{n-1}{\omega_j^k} &= \sum\limits_{j=0}^{n-1}{\EXP{\frac{2 \pi j i}{n}}^k} \\
+                                                    &= \sum\limits_{j=0}^{n-1}{\EXP{\frac{2 \pi j k i}{n}}} \\
+                                                    &= \sum\limits_{j=0}^{n-1}{\EXP{\frac{2 \pi k i}{n}}^j} \\
+                                                    &= \frac{1-\EXP{\frac{2 \pi k i}{n}}^n}{1-\EXP{\frac{2\pi ki}{n}}}=\frac{1-\EXP{2\pi ki}}{1-\EXP{\frac{2 \pi k i}{n}}} \\
+                                                    &= 0
+            \end{align*}
+        \end{proof}
+    \end{enumerate}
+\end{enumerate}
+\end{document}
