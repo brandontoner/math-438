@@ -1,0 +1,109 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{enumitem}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\EXP[1]{\exp\left(#1\right)}
+\newenvironment{proof}[1][]{\begin{samepage}\textbf{Proof #1} \\ }{\\ \rule{0.5em}{0.5em} \end{samepage} \\}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\begin{document}
+
+\begin{flushright}
+\textbf{Brandon Toner \\
+\today}
+\end{flushright}
+
+\begin{center}
+\textbf{MATH 438: Introduction to Complex Variables \\
+Assignment 3} \\
+\end{center}
+
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item %3
+    \begin{proof}[$n^n z^n$ converges only for $z=0$]
+        By De Moirve's formula, we find
+        \begin{eqnarray*}
+            n^n z^n &=& n^n \abs{z}^n (\cos(n\theta) + i \sin(n\theta)) \\
+                    &=& (n \abs{z})^n (\cos(n\theta) + i \sin(n\theta))
+        \end{eqnarray*}
+        Which is periodic with respect to $n$, which will not converge unless $n^n \abs{z}^n$ approaches $0$. 
+        Since the sequence is always zero when $z = 0$, the sequece converges.  When $z \neq 0$, since $n$ is approaching infinity,
+        there will exist $n_0$ such that for all $n \geq n_0$, $(n \abs{z}) > 2$. Since $2^n$ doesn't converge to $0$, the function
+        will not converge, because the function will be greater than $2^n$ for all $n>n_0$.
+    \end{proof}
+    \setcounter{enumi}{4}
+    \item %5
+    \begin{proof}[$b_n = 1 + 1/2 + 1/3 + ... + 1/n - \ln{n}, n \geq 1$ is decreasing]
+        Let $n \geq 1$
+        \begin{eqnarray*}
+            b_n &=& 1 + 1/2 + 1/3 + ... 1/n - \ln{n} \\
+                &=& \sum\limits_{i=1}^{n}\left(\frac{1}{i}\right)-\ln{n} \\
+            b_{n+1}-b_{n} &=& \sum\limits_{i=1}^{n+1}\left(\frac{1}{i}\right)-\ln(n+1) - \sum\limits_{i=1}^{n}\left(\frac{1}{i}\right)+\ln(n) \\
+                          &=& \frac{1}{n+1} - \ln(n+1) + \ln(n) = \frac{1}{n+1} + \ln{\frac{n}{n+1}} \\
+                          &<& 0
+        \end{eqnarray*}
+    \end{proof}
+    \begin{proof}[$a_n = 1 + 1/2 + 1/3 + ... + 1/(n-1) - \ln{n}, n \geq 1$ is increasing]
+        Let $n \geq 1$
+        \begin{eqnarray*}
+            a_n &=& 1 + 1/2 + 1/3 + ... 1/(n-1) - \ln{n} \\
+                &=& \sum\limits_{i=1}^{n-1}\left(\frac{1}{i}\right)-\ln{n} \\
+            a_{n+1}-a_{n} &=& \sum\limits_{i=1}^{n}\left(\frac{1}{i}\right)-\ln(n+1) - \sum\limits_{i=1}^{n-1}\left(\frac{1}{i}\right)+\ln(n) \\
+                          &=& \frac{1}{n} - \ln(n+1) + \ln(n) = \frac{1}{n} + \ln{\frac{n}{n+1}} \\
+                          &>& 0
+        \end{eqnarray*}
+    \end{proof}
+    \begin{proof}[$a_n$ $b_n$ converge to the same limit]
+        The defintion, $a_n = b_n - 1/n \implies b_n - a_n = 1/n$. Since $1/n$ approaches $0$ as $n$ approaces infinity, $a_n$ and $b_n$ must
+        approach the same value.  Since $a_n$ is increasing while $b_n$ is decreasing we get that the two sequences converge to a finite number
+        via the squeeze therom.
+    \end{proof}
+    \begin{proof}[$ 0.5 < \gamma < 0.6$]
+        Since $a_n$ is increasing, and $a_7 \approx 0.5041 > 0.5$, $\gamma > 0.5$, and since $b_n$ is decreasing, and $b_{50} \approx 0.587182 < 0.6$,
+        $\gamma < 0.6$
+    \end{proof}
+    \setcounter{enumi}{18}
+    \item %19
+    \begin{proof}
+        Since $\abs{p(z)}$ is bounded below by $0$,  we know that the set of points $k {z\in\mathbb{C} : p(z)}$ must have an infimum. 
+        Since $\abs{p(z)}$ is continous, $k$ must contain it's infimum. Therefore we know that $\abs{p(z)}$ must attain it's minimum value at some point
+        $z_0 \in \mathbb{C}$.
+    \end{proof}
+    \begin{proof}
+        Let $p(z) = 1 + a z^m  +...$, where $m \geq 1$ and $a \neq 0$. 
+        Assume $p(z)$ is at a minimum at $z=0$, where $p(z) = 1$.
+        We know that $z^m = \abs{z} (\cos(m \theta) + i \sin(m \theta))$.  If we let $z_1 = (1/a)e^{i \pi}$ we find $\abs{p(z_1)} = 0$,
+        which contradicts $p(0)$ being a minimum.
+    \end{proof}
+\end{enumerate}
+\end{document}
+
