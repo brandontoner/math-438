@@ -1,0 +1,96 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{enumitem}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\Arg[1]{\text{Arg}#1}
+\newcommand\EXP[1]{\exp\left(#1\right)}
+\newcommand\I{\textbf{i}}
+\newenvironment{proof}[1][]{\begin{samepage}\textbf{Proof #1} \\ }{\\ \rule{0.5em}{0.5em} \end{samepage} \\}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\begin{document}
+
+\begin{flushright}
+\textbf{Brandon Toner \\
+\today}
+\end{flushright}
+
+\begin{center}
+\textbf{MATH 438: Introduction to Complex Variables \\
+Assignment 4} \\
+\end{center}
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
+    \item %2
+    \begin{proof}[$1 + 2z + 3z^2 + ... + n z^{n - 1} = \frac{1-z^n}{(1-z)^2} - \frac{n z^n}{1-z}$]
+        \begin{align*}
+            1 + 2z + 3z^2 + ... + n z^{n - 1} &= \sum\limits_{k=1}^n \left(k z^{k-1}\right) \\
+                                              &= \sum\limits_{k=1}^n \left( \frac{d z^k}{dz} \right) = \frac{d}{dz} \left( \sum\limits_{k=1}^n z^k \right) \\
+                                              &= \frac{d}{dz} \left(\frac{z^{n+1}-z}{z-1}\right) \\
+                                              &= \frac{1-z^n}{(1-z)^2} - \frac{n z^n}{1-z}
+        \end{align*}
+    \end{proof}
+    \setcounter{enumi}{5}
+    \item %6
+    \begin{proof}
+        \begin{align*}
+            H(z) &= \int_{0}^{1}\frac{h(t)}{t-z}\ dt\\
+            H'(z) &= \lim_{w \to 0} \frac{H(z+w) - H(z)}{w} \\
+                  &= \lim_{w \to 0} \frac{\int_{0}^{1}\frac{h(t)}{t-z-w}\ dt - \int_{0}^{1}\frac{h(t)}{t-z}\ dt}{w} = \lim_{w \to 0} \frac{\int_{0}^{1}\left(\frac{h(t)}{t-z-w} - \frac{h(t)}{t-z}\right)\ dt}{w} \\
+                  &= \lim_{w \to 0} \int_{0}^{1}\left(\frac{h(t)}{w(t-z-w)} - \frac{h(t)}{w(t-z)}\right)\ dt \\
+                  &= \lim_{w \to 0} \int_{0}^{1}\frac{h(t)}{(t-z)(t-w-z)}\ dt \\
+                  &=  \int_{0}^{1}\frac{h(t)}{(t-z)^2}\ dt
+        \end{align*}
+        $H(z)$ is analytic because it's derivative exists for all $z$.
+    \end{proof}
+    \setcounter{enumi}{4}
+    \item %5
+    \begin{proof}
+        \begin{align*}
+            \cos(z) &= 0.5 (e^{\I z} + e^{-\I z}) \\
+            g_n(z) &= -\I \log(z \pm \sqrt{z^2-1}) = -\I\ln{\abs{z \pm \sqrt{z^2-1}}} + \Arg(z) + 2 \pi n
+        \end{align*}
+        The derivative of the $n$th branchs of $g(z)$, $g_n(z)$ should all be equal, since the $n$ term's deriviatve is zero.
+    \end{proof}
+    \setcounter{enumi}{8}
+    \item %9
+    \begin{proof}
+        \begin{align*}
+            \int \int_D \abs{f'(z)}^2\ dx\ dy &= \int \int_D \abs{\frac{d (x+yi)^2}{dx}}^2\ dx\ dy = \int \int_D \abs{\frac{d (x^2-y^2+2xyi)}{dx}}^2\ dx\ dy\\
+                                              &= \int \int_D \abs{2x + 2yi}^2\ dx\ dy = \int \int_D 4x^2 + 4y^2\ dx\ dy  \\
+                                              &= 4 \int_{0}^{1} \int_{0}^{2\pi} r^2 r\ dr\ d\theta \\
+                                              &= 2 \pi \\
+                                              &= 2 \text{(Area of a circle with radius 1)}
+        \end{align*}
+    \end{proof}
+\end{enumerate}
+\end{document}
