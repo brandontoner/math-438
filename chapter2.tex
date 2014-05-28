@@ -1,0 +1,173 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{enumitem}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\I{\textbf{i}}
+\newenvironment{proof}[1][]{\begin{samepage}\textbf{Proof #1} }{\rule{0.5em}{0.5em} \end{samepage}}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\begin{document}
+
+\begin{flushright}
+\textbf{Brandon Toner \\
+\today}
+\end{flushright}
+
+\begin{center}
+\textbf{MATH 438: Introduction to Complex Variables \\
+Proofs} \\
+\end{center}
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
+    \item Chapter 2
+    \begin{enumerate}[label*=\arabic*.]
+        \item %2.1
+        \begin{enumerate}[label=\alph*.]
+            \item %2.1.a
+                Real dot: $8$ \\
+                Complex dot: $8+\I$
+            \item %2.1.b
+                Real dot: $8$ \\
+                Complex dot: $8-\I$
+             \item %2.1.c
+                Real dot: $1$ \\
+                Complex dot: $i+2\I$
+            \item %2.1.d
+                Real dot: $2$ \\
+                Complex dot: $2-\I$
+            \item %2.1.e
+                Real dot: $x$ \\
+                Complex dot: $x+y\I$
+            \item %2.1.f
+                Real dot: $y$ \\
+                Complex dot: $y-x\I$
+        \end{enumerate}
+        \item %2.2
+        \begin{eqnarray*}
+            Re(z\bar{w})&=&Re(xu+yv+\I(yu-vx))=xu+yv \\
+            Re(\bar{z}w)&=&Re(xu+yv+\I(vx-uy))=xu+yv
+        \end{eqnarray*}
+        \item %2.3
+        \begin{proof}[$\abs{z \cdot w} \leq \abs{z}\abs{w}$]
+            \begin{eqnarray*}
+                \abs{Re(z)} &\leq& \abs{z} \\
+                \abs{Im(z)} &\leq& \abs{z} \\
+                \abs{z \cdot w} &=& \abs{Re(z\bar{w})} \\
+                              &\leq& \abs{z \bar{w}} \\
+                              &=& \abs{z}\abs{w}
+            \end{eqnarray*}
+        \end{proof}
+        \item %2.4
+        \begin{enumerate}[label=\alph*]
+            \item % 2.4.a
+            \begin{proof}[$\abs{z+w}^2 = \abs{z}^2 + \abs{w}^2 + 2 Re(z\bar{w})$]
+                \begin{eqnarray*}
+                    \abs{z+w}^2 &=& (z+w)\overline{(z+w)} \\
+                                &=& z \bar{z} + w \bar{w} + z\bar{w} + \bar{z} w \\
+                                &=& \abs{z}^2 + \abs{w}^2 + 2 Re(z\bar{w}) 
+                \end{eqnarray*}
+            \end{proof}
+            \item % 2.4.b
+            \begin{proof}[$\abs{z-w}^2 = \abs{z}^2 + \abs{w}^2 - 2 Re(z\bar{w})$]
+                \begin{eqnarray*}
+                    \abs{z-w}^2 &=& (z-w)\overline{(z-w)} \\
+                                &=& z \bar{z} + w \bar{w} - z\bar{w} - \bar{z} w \\
+                                &=& \abs{z}^2 + \abs{w}^2 - 2 Re(z\bar{w}) 
+                \end{eqnarray*}
+            \end{proof}
+        \end{enumerate}
+        \item %2.5
+        \begin{proof}[$\abs{z+w}\leq\abs{z}+\abs{w}$]
+            \begin{eqnarray*}
+                \abs{z+w}^2 &=& \abs{z}^2 + \abs{w}^2 + 2 Re(z\bar{w}) \\
+                            &\leq& \abs{z}^2 + \abs{w}^2 + \abs{z}\abs{w} \\
+                            &=& (\abs{z}+\abs{w})^2 \\
+                \implies \\
+                \abs{z+w} &\leq& \abs{z}+\abs{w}
+            \end{eqnarray*}
+        \end{proof}
+        \item %2.6
+        \begin{proof}[$\abs{\abs{z}-\abs{w}}\leq\abs{z-w}$]
+            \begin{eqnarray*}
+                \abs{z} &=& \abs{z - w + w} \\
+                        &\leq& \abs{z-w} +\abs{w} \\
+                \abs{z}-\abs{w} &\leq& \abs{z-w}
+            \end{eqnarray*}
+        \end{proof}
+        \item %2.7
+            Proof by induction using triangle inequality.
+        \item %2.8
+        \item %2.9
+        \begin{eqnarray*}
+            p(z) &=& a_n z^n + a_{n-1} z^{n-1} + ... + a_1 z+ a_0 = 0 \\
+            p(\bar{z}) &=& a_n \bar{z}^n + a_{n-1} \bar{z}^{n-1} + ... + a_1 \bar{z}+ a_0 \\ 
+                       &=& \overline{P(z)} \\
+                       &=& 0 
+        \end{eqnarray*}
+        \item %2.10
+        \begin{proof} 
+            \\
+            Pick $\epsilon > 0$. Since $\abs{w_n} \to 0$, $\exists N$ such that $n\geq N \implies \abs{w_n}< \epsilon$. Therefore, $\abs{z_n - z} \leq \abs{w_n} < \epsilon$ \\
+            $\implies z_n \to z$.\\
+        \end{proof}
+        \item %2.11
+        Proof showing it $z_n$ can't get close enought to $z$ otherwise.
+        \item %2.12
+        For each $\epsilon, \exists N$ such that $\abs{z_n - z} < \epsilon$ for $n>N$. Thus $\abs{z_n} < \epsilon + \abs{z} \implies z_n$ is bounded for $n>N$.
+        Since $z_n n\in1..N$ is finite, it must be bounded. Therefore $z_n$ is  bounded.
+        \item %2.13
+        \item %2.14
+            $\frac{1-1}{1+1}=0$
+        \item %2.15
+            $\frac{z_n^2 - 1}{z_n - 1} = z_n+1 = 2$
+        \item %2.16
+            $1$
+        \item %2.17
+            $0$
+        \item %2.18
+            $z_n \to \infty$ if $\forall K>0\ \exists N$ such that $n>N \implies \abs{z_n}\geq K$
+        \setcounter{enumii}{24}
+        \item %2.25
+            The sum of two continuous functions must be continuous, so $f(z)$ is continuous. \\
+            Since $u$ and $\I v$ are on seperate axis, their addition can't be continuous if either one isn't continuous.
+        \setcounter{enumii}{27}
+        \item %2.28
+        \begin{eqnarray*}
+            z &=& \frac{z-w}{h} \\
+              &=& \frac{z}{h}-\frac{w}{h} \\
+           z\frac{h-1}{h} &=& -\frac{w}{h} \\
+           z &=& -\frac{w}{h-1} \\
+             &=& \frac{w}{1-h} 
+        \end{eqnarray*}
+    \end{enumerate}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,252 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{enumitem}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\I{\textbf{i}}
+\newenvironment{proof}[1][]{\begin{samepage}\textbf{Proof #1} }{\rule{0.5em}{0.5em} \end{samepage}}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\begin{document}
+
+\begin{flushright}
+\textbf{Brandon Toner \\
+\today}
+\end{flushright}
+
+\begin{center}
+\textbf{MATH 438: Introduction to Complex Variables \\
+Proofs} \\
+\end{center}
+
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item Chapter 3
+    \begin{enumerate}[label*=\arabic*.]
+        \setcounter{enumii}{2}
+        \item %3.3
+        \begin{proof}\\
+            Assume $f$ is differentiable at $z$. Thus $\lim_{h\to 0} \frac{f(z+h)-f(z)}{h}$ does not approach $\infty$, and therefore $f(z+h)-f(z)$ must approach $0$. Which implies $f$ is continous at $z$.
+        \end{proof}
+        \setcounter{enumii}{9}
+        \item %3.10
+        \begin{enumerate}[label=(\alph*)]
+            \item %3.10.a
+            \begin{eqnarray*}
+                \frac{d z^2}{dz} &=& \frac{(z+dz)^2 -z^2}{dz} \\
+                                 &=& \frac{z^2+2zdz+dz^2-z^2}{dz} = \frac{2zdz+dz^2}{dz} \\
+                                 &=& 2z+dz \\
+                                 &=& 2z
+            \end{eqnarray*}
+            \item %3.10.b
+            \begin{eqnarray*}
+                \frac{d z^3}{dz} &=& \frac{(z+dz)^3 -z^3}{dz} \\
+                                 &=& \frac{z^3+3z^2dz+3dz^2z+dz^3-z^3}{dz} = \frac{3z^2dz+3dz^2z+dz^3}{dz} \\
+                                 &=& 3z^2+3zdz+dz^2\\
+                                 &=& 3z^2
+            \end{eqnarray*}
+        \end{enumerate}
+        \setcounter{enumii}{16}
+        \item %3.16
+            Assume 3.15
+            \begin{eqnarray*}
+                f &=& u+\I v \\
+                f_x &=& u_x + \I v_x \\
+                f_y &=& u_y + \I v_y \\
+                f_x &=& f_y /\I \text{ by 3.15} \\
+                u_x + \I v_x &=& (u_y + \I v_y)/\I = v_y -\I u_y \\
+                &\implies& u_x = v_y \text{ and }  u_y =-v_x
+            \end{eqnarray*}
+        \setcounter{enumii}{19}
+        \item %3.20
+            \begin{eqnarray*}
+                f &=&= u+0\I\\
+                f_x &=& u_x \\
+                f_y &=& u_y \\
+                u_x = f_x &=& -\I f_y = -\I u_y \text{ by Complex Cauchy-Riemann} \\
+                &\implies& u_x = u_y = 0 \text{ since $u_x, u_y \in \mathbb{R}$}
+            \end{eqnarray*}
+        \item %3.21
+            \begin{enumerate}[label=(\alph*)]
+                \item %3.21.a
+                    \begin{eqnarray*}
+                        u_r &=& \cos(\theta) \\
+                        v_r &=& \sin(\theta) \\
+                        u_\theta &=& -r \sin(\theta) \\
+                        v_\theta &=& r \cos(\theta) \\
+                        r u_r &=& r \cos(\theta) = v_\theta  \\
+                        r v_r &=& r \sin(\theta) = -u_\theta
+                    \end{eqnarray*}
+            \end{enumerate}
+        \setcounter{enumii}{24}
+        \item %3.25
+            Let $f$ be a $C^1$ analytic function.
+            \begin{eqnarray*}
+                \frac{\partial f}{\partial \bar{z}} &=& 0.5 (f_x - f_y/i) \\
+                                                    &=& 0.5 (f_x - f_x) = 0 \text{ by Cauchy-Riemann}
+            \end{eqnarray*}
+        \setcounter{enumii}{30}
+        \item %3.31
+        \begin{eqnarray*}
+            e^z &=& e^{x+y\I} \\
+            (e^z)_x &=& e^{x+y\I} \\
+            (e^z)_y &=& \I e^{x+y\I} \\
+            (e^z)_x &=& (e^z)_y / \I \\
+                   &\implies& e^z \text{ is analytic}
+        \end{eqnarray*}
+        \setcounter{enumii}{33}
+        \item %3.34
+            \begin{eqnarray*}
+                \abs{e^z} &=& \abs{e^x(\cos(y)+\I\sin(y))} \\
+                          &=& \abs{e^x}\abs{\cos(y)+\I\sin(y)} \\
+                          &=& \abs{e^x}
+            \end{eqnarray*}
+        \item %3.35
+        \begin{enumerate}[label=(\alph*)]
+            \item %3.35.a
+                All of $\mathbb{C}$ except for $0$
+            \item %3.35.b
+            \begin{eqnarray*}
+                e^{z+2\pi\I} &=& e^{x+(y+2\pi)\I} \\
+                             &=& e^x(\cos(y+2\pi)+\I\sin(y+2\pi)) \\
+                             &=& e^x(\cos(y)+\I\sin(y)) \\
+                             &=& e^z
+            \end{eqnarray*}
+            \item %3.35.c
+            \item %3.35.d
+                Since $e^z$ is periodic of period $2\pi\I$ there exists $n\in\mathbb{Z}$ such that $0 \leq y+2n\pi\I < 2\pi$ and $e^{z + 2n\pi\I} = e^z$
+        \end{enumerate}
+        \item %3.36
+        Let $z=t(x+y\I)=xt+yt\I$
+        \begin{eqnarray*}
+            e^z &=& e^{xt+yt\I} \\
+                &=& e^{xt}(\cos(yt)+ \I \sin(yt))
+        \end{eqnarray*}
+        $e^z$ is a spiral in the complex plane, with radius $e^{xt}$ and angle $yt$
+        \item %3.37
+        \begin{proof}[$\overline{e^z}=e^{\bar{z}}$]
+            \begin{eqnarray*}
+                \overline{e^z} &=& \overline{e^x(\cos(y) + \I \sin(y))} \\
+                               &=& e^x(\cos(y)-\I\sin(y)) \\
+                               &=& e^x(\cos(-y)+\I\sin(-y)) \\
+                               &=& e^{\bar{z}}
+            \end{eqnarray*}
+        \end{proof}
+        \item %3.38
+        \begin{eqnarray*}
+            e^z &=& e^x(\cos(y)+\I\sin(y)) \\
+            e^w &=& e^u(\cos(v)+\I\sin(v)) \\
+        \end{eqnarray*}
+        \item %3.39
+        \begin{proof}[$\sin(z)$ is entire]
+        \begin{eqnarray*}
+            \sin(z) &=& (e^{\I z}-e^{-\I z})/(2 \I) \\
+            \sin_x(z) &=& (\I e^{\I z}+\I e^{-\I z}) / (2\I) = (e^{\I z}+e^{-\I z})/(2) \\
+            \sin_y(z) &=& (-e^{\I z} - e^{-\I z})/(2\I) \\
+            1/\I &=& -\I \\
+            \sin_x(z) &=& \sin_y(z)/\I
+        \end{eqnarray*}
+        \end{proof}\\
+        \begin{proof}[$\cos(z)$ is entire]
+        \begin{eqnarray*}
+            \cos(z) &=& (e^{\I z}+e^{-\I z})/2 \\
+            \cos_x(z) &=& (\I e^{\I z}-\I e^{-\I z}) / 2 \\
+            \cos_y(z) &=& (-e^{\I z} + e^{-\I z})/2 \\
+            1/\I &=& -\I \\
+            \cos_x(z) &=& \cos_y(z)/\I
+        \end{eqnarray*}
+        \end{proof}
+        \item %3.40
+        \begin{eqnarray*}
+            \sin(z) &=& (e^{\I z}-e^{-\I z})/(2 \I) \\
+            \overline{\sin{z}} &=& \overline{(e^{\I z}-e^{-\I z})/(2 \I)} \\
+                               &=& \overline{(e^{\I(x+y\I)}-e^{-\I(x+y\I)})/(2 \I)} = \overline{(e^{-y+x\I}-e^{y-x\I})/(2 \I)} \\
+                               &=& \overline{(e^{-y}(\cos(x)+\I\sin(x))-e^{y}(\cos(-x)+\I\sin(-x)))/(2\I)} \\
+                               &=& \overline{(e^{-y}(-\I\cos(x)+\sin(x))-e^{y}(-\I\cos(-x)+\sin(-x)))/(2)} \\
+                               &=& (e^{-y}(\I\cos(x)+\sin(x))-e^y(\I\cos(x)-\sin(x)))/2 \\
+            \sin(\bar{z}) &=& (e^{\I \bar{z}}-e^{-\I \bar{z}})/(2 \I) =  (e^{\I (x-y\I)}-e^{-\I (x-y\I)})/(2 \I) \\
+                          &=& (e^{y+x\I}-e^{-y-x\I})/(2 \I) \\
+                          &=& (e^y(\cos(x)+\I\sin(x))-e^{-y}(\cos(-x)+\I\sin(-x)))/(2\I) \\
+                          &=& (e^y(-\I\cos(x)+\sin(x))-e^{-y}(-\I\cos(-x)+\sin(-x)))/2  \\
+                          &=& (-e^y(\I\cos(x)-\sin(x))+e^{-y}(\I\cos(x)+\sin(x)))/2 \\
+            \overline{\sin{z}} &=& \sin(\bar{z})
+        \end{eqnarray*}
+        \setcounter{enumii}{50}
+        \item %3.51
+        \begin{eqnarray*}
+            1 &=& \frac{d z}{dz} \\
+              &=& \frac{d e^{\log{z}}}{dz} \\
+              &=& e^{\log{z}}\frac{d\log{z}}{dz} \\
+              &=& z \frac{d\log{z}}{dz} \\
+         \frac{1}{z} &=& \frac{d\log{z}}{dz}
+        \end{eqnarray*}
+        \setcounter{enumii}{54}
+        \item %3.55
+        \begin{eqnarray*}
+            \frac{d z^w}{dz} &=& \frac{d e^{w\log{z}}}{dz} \\
+                             &=& e^{w\log{z}}\frac{d w\log{z}}{dz} \\
+                             &=& z^w w/z \\
+                             &=& wz^{w-1}
+        \end{eqnarray*}
+        \setcounter{enumii}{56}
+        \item %3.57
+        \begin{enumerate}[label=(\alph*)]
+            \item %3.57.a
+                $0$
+            \item %3.57.b
+                $-\ln(2)-\I\pi/2$
+            \item %3.57.c
+                $-\ln(2)+\I\pi$
+            \item %3.57.d
+                $-\pi/2$
+            \item %3.57.e
+                $\ln(2)/2+3\I\pi/4$
+            \item %3.57.f
+                $ 1.60944+0.927295\I$
+        \end{enumerate}
+        \setcounter{enumii}{58}
+        \item %3.59
+        \begin{enumerate}[label=(\alph*)]
+            \item %3.59.a
+                $\cos(\pi \sqrt{2}) + \I \sin(\pi \sqrt{2})$
+            \item %3.59.b
+                $2\cos(\ln(2))-2\I\sin(\ln(2))$
+            \item %3.59.c
+                $2^{1/\sqrt{2}} \cos(\frac{\pi\sqrt2}{4}) + 2^{1/\sqrt{2}} \I\sin(\frac{\pi\sqrt2}{4})$
+            \item %3.59.d
+                $e^{-\pi/2}$
+            \item %3.59.e
+                $\pi \I$
+            \item %3.59.f
+                $e^{\pi/2}$
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+\end{document}

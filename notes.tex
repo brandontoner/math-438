@@ -1,0 +1,94 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{enumitem}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\I{\textbf{i}}
+\newcommand\Arg[1]{\text{Arg}#1}
+\newenvironment{proof}[1][]{\begin{samepage}\textbf{Proof #1} }{\rule{0.5em}{0.5em} \end{samepage}}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\begin{document}
+
+\begin{flushright}
+\textbf{Brandon Toner \\
+\today}
+\end{flushright}
+
+
+$(a + b\I)+(c+d\I) = (a+c) + (b+d)\I$ \\
+$(a + b\I) (x+y\I) = (ac-bd) + (ad+bc)\I$ \\
+$\bar{z} = x - y\I$ \\
+$\abs{z}^2 = z \bar{z}$ \\
+$\xi=a+b\I$ and $z=x+y\I$. $\xi z + \overline{\xi z} = 2c \implies ax - by=c$ \\
+$z \bar{z}-b\bar{z}-\bar{b}z = c$ is equation of circle with center $b$ and radius $\sqrt{c+\abs{b}^2}$ \\
+$\Arg(z)$ is angle between positive real axis and $z$. $\arg(z)=\Arg(z) + 2 \pi k$\\
+Polar form: $z=\abs{z}(\cos(\Arg(z))+\I\sin(\Arg(z)))$\\
+De Moivre's Formula: $z=\abs{z}(\cos(\Arg(z)) + \I \sin(\Arg(z)))$. $z^n = \abs{z}^n(\cos(n\Arg(z)) + \I \sin(n\Arg(z)))$ \\
+$\log(w) = \ln(\abs{w}e^{\I \arg(w)}) = \ln{\abs{w}} + \I \arg(w)$ \\
+Complex Dot Product: $(a+b\I)\cdot(x+y\I) = ax+by$ \\
+Real Dot Product: $(a+b\I, x+y\I) = (a+b\I)\overline{(x+y\I)}$ \\
+Schwarz Inequaltiy: $\abs{z\cdot w} \leq \abs{z}\abs{w}$ \\
+Complex Law of Cosines: $\abs{z+w}^2 = \abs{z}^2+2Re(z\bar{w})+\abs{w}^2$ \\
+Triangle Inequality, reverse: $\abs{z+w} \leq \abs{z} + \abs{w}$. $\abs{z}-\abs{w} \leq \abs{z-w}$. \\
+Neighborhood: $N(p, \epsilon) = \{z:\abs{z-p} < \epsilon\}$ \\
+Circle of radius $\epsilon$ centered at $p$: $C(p, \epsilon)=\{z:\abs{z-p}=\epsilon\}$\\
+Polygonal Path: A fininte number of line segments joined end to end beginning at $a \in \mathbb{C}$ and ending at $b \in \mathbb{C}$ \\
+Open set: A set $O \subset \mathbb{C}$ is an open set if each point in $O$ has a neighborhood which is contained in $O$. \\
+Domain: A domain $D \subset \mathbb{C}$ is an open set for wich it is possible to join any two points by a polygonal path in $D$ \\
+Boundary: A point $p$ is a boundary point of $S$ if each neighborhood of $p$ contains a point in $S$ and a point not in $S$. Written as $\partial S$.
+The Boundary of a domain is its edge.  \\
+Closure: The closure of $S$ is $\bar{S}=S\cup \partial S$ \\
+Closed set: Set is closed if $S=\bar{S}$ \\
+Cluster Point: A point $p$ is a cluster point of $S$ if each neighborhood of $p$ contains infinitly may points of $S$ \\
+Complement: The complement of $S$ is $S'$ which contains all points not in $S$. \\
+Compact Set: A set $S$ is compact if every infinite sequence of distinct points in $S$ has a cluster point in $S$. \\
+Open Cover: A collection ${O_i}$ of open sets such that $S \subset \cup O_i$ is called an open cover of $S$. \\
+Finite Subcover: A finite subset of the open cover that cover $S$  \\
+Continous at a point: $f:D\to\mathbb{C}$ is continous if $\lim_{w\to z}f(w)=f(z)$ or $\forall \epsilon>0 \exists\ \delta >0$ s.t. $\abs{z-w}< \delta \implies \abs{f(z)-f(w)}<\epsilon$. \\
+Continous on $D$: Function is continous of $D$ if continous on every point of $D$. \\
+Uniform Continuity: $f$ is uniformly continous on $K\subset D$ if $\forall \epsilon>0 \exists\ \delta >0$ s.t. $\abs{z_1-z_2}< \delta \implies \abs{f(z_1)-f(z_2)}<\epsilon \forall z_1, z_2 \in K$. \\
+$f'(z) = \lim_{h\to 0} \frac{f(z+h)-f(z)}{h} $ \\
+Differentiable: $f$ is differentiable at $z$ if $f'(z)$ exists. \\
+Analytic at $z_0$: $f$ is analytic at $z_0$ if $f'(z)$ exists at all points in some neighborhood of $z_0$ \\
+Analytic on $D$: $f$ is analytic on domain $D$ if $f'(z)$ exits $\forall z\in D$. \\
+Partial Derivative of $f$ with respect to $x$: $f_x = \frac{\partial f}{\partial x}=\lim_{\Delta x \to 0} \frac{f(z+\Delta x)-f(z)}{\Delta x} = u_x + \I v_x $\\
+Partial Derivative of $f$ with respect to $y$: $f_y = \frac{\partial f}{\partial y}=\lim_{\Delta y \to 0} \frac{f(z+\I \Delta y)-f(z)}{\Delta y} = u_y + \I v_y$ \\
+$C^1$ at $z$: if $f_x$ and $f_y$ exist and are continous on a neighborhod containing $z$, $f$ is $C^1$ at $z$. \\
+$C^1$ on $D$: if $f_x$ and $f_y$ exits and are continous on $D$, $f$ is $C^1$ on $D$. \\
+Complex Cauchy-Riemann Equations: If $f'(z)$ exists then $f_x(z) = \frac{1}{\I} f_y(z)$. If $f$ is $C^1$ at $z$ then $f_x(z)=\frac{1}{\I} f_y(z) \implies f'(z)$ exitsts. If $f$ is $C^1$ on $D$, then $f$ is analytic on $D \iff f_x = f_y / \I$ on $D$. \\
+Real Cauch-Riemann Equations: Suppose $f=u+\I v$ is $C^1$ on domain $D$. Then $f$ is analytic on $D \iff u_x(z) = v_y(z)$ and $u_y(z) = -v_x(z)$ on $D$. \\
+Polar Cauchy-Riemann: If $f(z=re^{\I\theta})=u(r,\theta)+\I v(r,\theta)$ is $C^1$ at $z$ then $r u_r = v_{\theta}$ and $r v_r=-u_{\theta}$ \\
+$\frac{\partial f}{\partial z} = \frac{1}{2}\left(\frac{\partial f}{\partial x} + \frac{\partial f}{\I \partial  y}\right) $ \\
+$\frac{\partial f}{\partial \bar{z}} = \frac{1}{2}\left(\frac{\partial f}{\partial x} - \frac{\partial f}{\I \partial  y}\right) $ \\
+A $C^1$ function is analytic iff $\frac{\partial f}{\partial \bar{z}} = 0$ \\
+$z^{\xi} = exp(\xi \log(z)) = exp(\xi (\ln\abs{z} + \I \arg(z)))$\\
+
+\end{document} 
