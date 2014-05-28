@@ -1,0 +1,167 @@
+\documentclass{article}%
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{enumitem}
+%-------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand\EXP[1]{\exp\left(#1\right)}
+\newcommand\I{\textbf{i}}
+\newenvironment{proof}[1][]{\begin{samepage}\textbf{Proof #1} \\ }{\\ \rule{0.5em}{0.5em} \end{samepage} \\}
+\setlength{\textwidth}{7.0in}
+\setlength{\oddsidemargin}{-0.35in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\parindent}{0.3in}
+\begin{document}
+
+\begin{flushright}
+\textbf{Brandon Toner \\
+\today}
+\end{flushright}
+
+\begin{center}
+\textbf{MATH 438: Introduction to Complex Variables \\
+Assignment 5} \\
+\end{center}
+
+\begin{enumerate}
+    \setcounter{enumi}{9}
+    \item %10
+    \begin{eqnarray*}
+        \sum\limits_{n=0}^{\infty}\left[{\alpha \choose n}z^n\right] &=& \sum\limits_{n=0}^{\infty}\left[{\prod\limits_{i=1}^{n}{\left(\frac{\alpha-n+i}{i}\right)}}z^n\right] \\
+          \text{Let } s_n &=& \prod\limits_{i=1}^{n}{\left(\frac{\alpha-n+i}{i}\right)}z^n \\
+        \frac{s_{n+1}}{s_n} &=& \frac{z^{n+1}\prod\limits_{i=1}^{n+1}{\frac{\alpha-n-1+i}{i}}}{z^n\prod\limits_{i=1}^{n}{\frac{\alpha-n+i}{i}}} \\
+        &=& z\frac{\alpha}{n+1} \frac{\prod\limits_{i=1}^{n}{\frac{\alpha-n-1+i}{i}}}{\prod\limits_{i=1}^{n}{\frac{\alpha-n+i}{i}}} \\
+        &=& z\frac{\alpha}{n+1} \prod\limits_{i=1}^{n}{\frac{\alpha-n-1+i}{\alpha-n-i}} \\
+        &=& z \frac{\alpha-n}{n+1} \\
+        \abs{\frac{s_{n+1}}{s_n}} &=& \abs{z \frac{\alpha-n}{n+1}} \\
+                                  &<& 1 ~~\forall \abs{z} < \abs{\frac{n+1}{n-\alpha}} < 1 \\
+                                &\implies& \text{Convergence for } \abs{z}<1
+    \end{eqnarray*}
+    \begin{proof}[$\frac{1}{n!}\frac{d^n (1+z)^\alpha}{dz^n}={\alpha \choose n}(1+z)^{\alpha-n}$]
+        \begin{eqnarray*}
+            \textbf{Basis: } \frac{1}{1!}\frac{d (1+z)^\alpha}{dz} &=& \alpha (1+z)^{\alpha-1} \\
+            {\alpha \choose 1} (1+z)^{\alpha-1}&=& \alpha (1+z)^{\alpha-1} \\
+            \textbf{Assume } \frac{1}{n!}\frac{d^n (1+z)^\alpha}{dz^n}&=&{\alpha \choose n}(1+z)^{\alpha-n} \\
+            \frac{d}{dz}\left(\frac{1}{n!}\frac{d^n (1+z)^\alpha}{dz^n}\right) &=& \frac{1}{n!}\frac{d^{n+1} (1+z)^\alpha}{dz^{n+1}} \\
+            \frac{d}{dz}\left({\alpha \choose n}(1+z)^{\alpha-n}\right) &=& {\alpha \choose n}(\alpha-n)(1+z)^{\alpha-n-1} \\
+            \frac{1}{n!}\frac{d^{n+1} (1+z)^\alpha}{dz^{n+1}} &=& {\alpha \choose n}(\alpha-n)(1+z)^{\alpha-(n+1)} \\
+            \frac{1}{(n+1)n!}\frac{d^{n+1} (1+z)^\alpha}{dz^{n+1}} &=& {\alpha \choose n}\frac{\alpha-n}{n+1}(1+z)^{\alpha-(n+1)} \\
+            \frac{1}{(n+1)!}\frac{d^{n+1} (1+z)^\alpha}{dz^{n+1}} &=& {\alpha \choose n+1}(1+z)^{\alpha-(n+1)}
+        \end{eqnarray*}
+    \end{proof}
+    \begin{proof}[$\sum\limits_{n=0}^{\infty}{{\alpha \choose n} z^n} = (1+z)^\alpha$]
+       The Taylor series for a function, $f(z)$ is:
+        \begin{eqnarray*}
+            f(z) &=& f(z_0) + \sum\limits_{n=1}^{\infty}{\left[\left.\frac{1}{n!}\frac{d^nf(z)}{dz^n}\right|_{z=z_0} (z-z_0)^n\right]}
+        \end{eqnarray*}
+        Let $z_0=0$. For $f(z)=(1+z)^\alpha$, we know
+        \begin{eqnarray*}
+             \left.\frac{1}{n!}\frac{d^n (1+z)^\alpha}{dz^n}\right|_{z=0}&=&\left.{\alpha \choose n}(1+z)^{\alpha-n}\right|_{z=0} \\
+             &=& {\alpha \choose n}
+        \end{eqnarray*}
+        Thus, the Taylor series for $f(z)=(1+z)^\alpha$ is
+        \begin{eqnarray*}
+            (1+z)^\alpha&=&1+\sum\limits_{n=1}^{\infty}{\left[{\alpha \choose n}z^n\right]} \\
+                        &=&\sum\limits_{n=0}^{\infty}{\left[{\alpha \choose n}z^n\right]}
+        \end{eqnarray*}
+    \end{proof}
+    \item %11
+    \begin{eqnarray*}
+        J_n(z) &=& \sum\limits_{k=0}^{\infty}{\frac{(-1)^k z^{n+2k}}{k!(n+k)!2^{n+2k}}} \\
+        \frac{\partial J_n(z)}{\partial x} &=& \sum\limits_{k=0}^{\infty}{\frac{(-1)^k (n+2k) z^{n+2k-1}}{k!(n+k)!2^{n+2k}}} \\
+        \frac{\partial J_n(z)}{\partial y} &=& \sum\limits_{k=0}^{\infty}{\frac{(-1)^k \I (n+2k) z^{n+2k-1}}{k!(n+k)!2^{n+2k}}} \\
+                                           &=& \I \frac{\partial J_n(z)}{\partial x} \\
+                                           &\implies& J_n(z) \text{ is entire.}\\
+    \end{eqnarray*}
+    \item %12
+    For an even function, $f(z) = f(-z)$ for all $z$.
+    \begin{eqnarray*}
+        f(z) &=& \sum\limits_{n=0}^{\infty}{a_n z^n} \\
+        f(-z) &=& \sum\limits_{n=0}^{\infty}{a_n (-z)^n} \\
+        \sum\limits_{n=0}^{\infty}{a_n z^n} &=&  \sum\limits_{n=0}^{\infty}{a_n (-z)^n} = \sum\limits_{n=0}^{\infty}{a_n (-1)^{n}z^n} \\
+        &\implies& (-1)^{n} = 1 \text{ or } a_n=0 \\
+        &\implies& a_n = 0 \text{ if } n \text{ is odd }
+    \end{eqnarray*}
+    For an odd function, $f(z) = -f(-z)$ for all $z$.
+    \begin{eqnarray*}
+        f(z) &=& \sum\limits_{n=0}^{\infty}{a_n z^n} \\
+        -f(-z) &=& \sum\limits_{n=0}^{\infty}{-a_n (-z)^n} \\
+        \sum\limits_{n=0}^{\infty}{a_n z^n} &=&  \sum\limits_{n=0}^{\infty}{-a_n (-z)^n} = \sum\limits_{n=0}^{\infty}{a_n (-1)^{n+1}z^n} \\
+        &\implies& (-1)^{n+1} = 1 \text{ or } a_n=0 \\
+        &\implies& a_n = 0 \text{ if } n \text{ is even }
+    \end{eqnarray*}
+    \item %13
+    Assume $f(z_0) = g(z_0) = 0$ and $g(z)$ is not identically zero.
+    \begin{eqnarray*}
+        \lim_{z \to z_0}{\frac{f(z)}{g(z)}} &=& \lim_{h \to 0}{\frac{f(z_0+h)}{g(z_0+h)}} = \lim_{h \to 0}{\frac{f(z_0+h)-0}{g(z_0+h)-0}} \\
+                                            &=& \lim_{h \to 0}{\frac{f(z_0+h)-f(z_0)}{g(z_0+h)-g(z_0)}} \\
+                                            &=& \lim_{h \to 0}{\frac{(f(z_0+h)-f(z_0))h}{(g(z_0+h)-g(z_0))h}} \\
+                                            &=& \lim_{h \to 0}{\frac{f(z_0+h)-f(z_0)}{h} \frac{h}{g(z_0+h)-g(z_0)}} \\
+                                            &=& \frac{f'(z_0)}{g'(z_0)}
+    \end{eqnarray*}
+    \setcounter{enumi}{0}
+    \item %1
+    \begin{enumerate}[label=(\alph*)]
+        \item %a
+        \begin{eqnarray*}
+            f(z) &=& \frac{1}{z^2+1} \\
+            g(w) = f(1/w) &=& \frac{w^2}{w^2+1} \\
+            g(w) &=& w^2 - w^4 + w^6 + ... \\
+                 &=& \sum\limits_{j=1}^{\infty}{(-1)^{j+1}w^{2j}} \\
+        \end{eqnarray*}
+        \item %b
+        \begin{eqnarray*}
+            f(z) &=& \frac{z^2}{z^3-1} \\
+            g(w) = f(1/w) &=& \frac{w}{1-w^3} \\
+                 &=& w + w^4 + w^7 + w^10 + ... \\
+                 &=& \sum\limits_{j=0}^{\infty}{w^{1+3j}}
+        \end{eqnarray*}
+        \item %c
+        \begin{eqnarray*}
+            f(z) &=& e^{1/z^2} \\
+            g(w) = f(1/w) &=& e^{w^2} \\
+                &=& 1 + w^2 + \frac{w^4}{2} + \frac{w^6}{6} + \frac{w^8}{24} + ... \\
+                &=& \sum\limits_{j=0}^{\infty}{\frac{w^{2k}}{k!}}
+        \end{eqnarray*}
+        \item %d
+        \begin{eqnarray*}
+            f(z) &=& z \sinh(1/z) \\
+            g(w) = f(1/w) &=& \sinh(w)/w \\
+                &=& 1 + \frac{w^2}{6} + \frac{w^4}{120} + \frac{w^6}{5040} + ... \\
+                &=& \sum\limits_{j=0}^{\infty}{\frac{w^{2j}}{(2j+1)!}}
+        \end{eqnarray*}
+    \end{enumerate}
+    \item %2
+    \begin{eqnarray*}
+        \text{Let }g(w) &=& f(1/w) \\
+        \lim_{z \to \infty}{z[f(z)-f(\infty)]} &=& \lim_{w \to 0}{\frac{f(1/w)-f(\infty)}{w}} \\
+                                               &=& \lim_{w \to 0}{\frac{g(w)-g(0)}{w}} \\
+                                               &=& \left. \frac{d g(w)}{dw} \right|_{w=0} \\
+                                               &=& \left. \frac{d f(z)}{dz} \right|_{z=\infty}
+    \end{eqnarray*}
+\end{enumerate}
+\end{document}
